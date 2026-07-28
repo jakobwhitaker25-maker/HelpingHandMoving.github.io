@@ -3,40 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Helping Hand Moving Services | Professional Moving Solutions</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <title>Helping Hand Moving Services</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         :root {
-            /* Color Palette */
-            --cream: #f8f4f0;
-            --warm-white: #fdfdfd;
-            --deep-navy: #1a3a5f;
-            --forest-green: #2d5a3c;
-            --olive: #6b7a4d;
-            --warm-gold: #b4945c;
-            --slate-gray: #708090;
-            --light-gray: #e0e0e0;
-            --dark-gray: #4a4a4a;
-            
-            /* Spacing */
+            --primary-color: #2c5e3a;
+            --secondary-color: #4a8c5d;
+            --accent-color: #ff9900;
+            --light-color: #f8f9fa;
+            --dark-color: #212529;
+            --cream: #fffdf7;
+            --slate-gray: #6b7280;
+            --deep-navy: #1e3a5f;
+            --forest-green: #2c5e3a;
+            --warm-gold: #ff9900;
+            --light-gray: #e5e7eb;
+            --transition-fast: all 0.3s ease;
             --spacing-xs: 0.5rem;
             --spacing-sm: 1rem;
-            --spacing-md: 2rem;
-            --spacing-lg: 3rem;
-            --spacing-xl: 4rem;
-            
-            /* Typography */
-            --heading-font: 'Cormorant Garamond', serif;
-            --body-font: 'Inter', sans-serif;
-            
-            /* Shadows */
-            --shadow-light: 0 2px 10px rgba(0, 0, 0, 0.05);
-            --shadow-medium: 0 4px 15px rgba(0, 0, 0, 0.1);
-            
-            /* Transitions */
-            --transition-fast: 0.2s ease;
-            --transition-normal: 0.3s ease;
+            --spacing-md: 1.5rem;
+            --spacing-lg: 2rem;
+            --spacing-xl: 3rem;
+            --shadow-light: 0 2px 4px rgba(0, 0, 0, 0.05);
+            --heading-font: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            --body-font: 'Roboto', Arial, sans-serif;
         }
 
         * {
@@ -46,11 +36,10 @@
         }
 
         body {
-            background-color: var(--warm-white);
-            color: var(--deep-navy);
             font-family: var(--body-font);
             line-height: 1.6;
-            scroll-behavior: smooth;
+            color: var(--dark-color);
+            background-color: white;
         }
 
         .container {
@@ -60,7 +49,81 @@
             padding: 0 var(--spacing-sm);
         }
 
-        /* Header Styles */
+        h1, h2, h3, h4, h5 {
+            font-family: var(--heading-font);
+            line-height: 1.3;
+            margin-bottom: var(--spacing-md);
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: var(--spacing-xl);
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--deep-navy);
+            position: relative;
+            display: inline-block;
+            padding-bottom: 1rem;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: var(--accent-color);
+            border-radius: 2px;
+        }
+
+        .section-title p {
+            font-size: 1.1rem;
+            color: var(--slate-gray);
+            max-width: 700px;
+            margin: var(--spacing-md) auto 0;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition-fast);
+            border: none;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        .btn-primary {
+            background-color: var(--forest-green);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-3px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--forest-green);
+            border: 2px solid var(--forest-green);
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--forest-green);
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        /* Header */
         header {
             background-color: white;
             box-shadow: var(--shadow-light);
@@ -68,39 +131,29 @@
             width: 100%;
             top: 0;
             z-index: 1000;
-            padding: var(--spacing-sm) 0;
         }
 
         .header-container {
             display: flex;
             justify-content: space-between;
             align-items: center;
+            padding: var(--spacing-md) 0;
         }
 
         .logo {
             display: flex;
             align-items: center;
-            gap: 10px;
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: var(--deep-navy);
-        }
-
-        .logo i {
-            color: var(--forest-green);
-        .logo img {
-            height: 64px;
-            width: auto;
-            display: block;
-            flex-shrink: 0;
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 16px;
+            gap: var(--spacing-sm);
             text-decoration: none;
+            font-weight: 700;
+            font-size: 1.4rem;
             color: var(--deep-navy);
+        }
+
+        .logo img {
+            height: 50px;
+            width: auto;
+            object-fit: contain;
         }
 
         nav ul {
@@ -113,9 +166,8 @@
             text-decoration: none;
             color: var(--deep-navy);
             font-weight: 500;
-            position: relative;
-            padding: 0.5rem 0;
             transition: var(--transition-fast);
+            position: relative;
         }
 
         nav a:hover {
@@ -125,12 +177,12 @@
         nav a::after {
             content: '';
             position: absolute;
-            bottom: 0;
+            bottom: -5px;
             left: 0;
             width: 0;
             height: 2px;
             background-color: var(--forest-green);
-            transition: var(--transition-normal);
+            transition: var(--transition-fast);
         }
 
         nav a:hover::after {
@@ -138,127 +190,58 @@
         }
 
         .cta-button {
-            background-color: transparent;
-            border: 2px solid var(--forest-green);
-            color: var(--forest-green);
-            padding: 0.7rem 1.5rem;
-            font-weight: 500;
-            border-radius: 0;
+            background-color: var(--accent-color);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition-fast);
+            border: none;
             cursor: pointer;
-            transition: var(--transition-normal);
-            font-family: var(--body-font);
         }
 
         .cta-button:hover {
-            background-color: var(--forest-green);
-            color: white;
+            background-color: #e68a00;
+            transform: translateY(-3px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
         /* Hero Section */
         .hero {
-            padding: calc(100px + var(--spacing-xl)) 0 var(--spacing-xl);
-            position: relative;
-            overflow: hidden;
-            background: linear-gradient(rgba(253, 253, 253, 0.9), rgba(253, 253, 253, 0.9)), 
-                        url('https://images.unsplash.com/photo-1600880292089-90a7e086ee0c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;
+            padding: 150px 0 var(--spacing-xl);
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            margin-top: 70px;
         }
 
         .hero-content {
-            max-width: 700px;
-            text-align: left;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
         }
 
         .hero h1 {
-            font-family: var(--heading-font);
-            font-size: 3.5rem;
-            line-height: 1.2;
+            font-size: 3rem;
             margin-bottom: var(--spacing-md);
             color: var(--deep-navy);
         }
 
         .hero p {
             font-size: 1.2rem;
+            color: var(--slate-gray);
             margin-bottom: var(--spacing-lg);
-            color: var(--dark-gray);
         }
 
         .hero-btns {
             display: flex;
-            gap: 1rem;
+            justify-content: center;
+            gap: var(--spacing-md);
             flex-wrap: wrap;
-        }
-
-        .btn {
-            padding: 1rem 2rem;
-            font-weight: 500;
-            border-radius: 0;
-            cursor: pointer;
-            transition: var(--transition-normal);
-            text-decoration: none;
-            display: inline-block;
-            text-align: center;
-            font-family: var(--body-font);
-        }
-
-        .btn-primary {
-            background-color: var(--forest-green);
-            color: white;
-            border: 2px solid var(--forest-green);
-        }
-
-        .btn-primary:hover {
-            background-color: transparent;
-            color: var(--forest-green);
-        }
-
-        .btn-secondary {
-            background-color: transparent;
-            color: var(--forest-green);
-            border: 2px solid var(--forest-green);
-        }
-
-        .btn-secondary:hover {
-            background-color: var(--forest-green);
-            color: white;
-        }
-
-        /* Section Titles */
-        .section-title {
-            text-align: center;
-            margin-bottom: var(--spacing-xl);
-        }
-
-        .section-title h2 {
-            font-family: var(--heading-font);
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            color: var(--deep-navy);
-            position: relative;
-            display: inline-block;
-        }
-
-        .section-title h2::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 3px;
-            background-color: var(--forest-green);
-        }
-
-        .section-title p {
-            color: var(--slate-gray);
-            max-width: 700px;
-            margin: 0 auto;
-            font-size: 1.1rem;
         }
 
         /* Services Section */
         .services {
             padding: var(--spacing-xl) 0;
-            background-color: var(--cream);
         }
 
         .services-grid {
@@ -269,16 +252,16 @@
 
         .service-card {
             background-color: white;
-            padding: var(--spacing-md);
-            border: 1px solid var(--light-gray);
-            transition: var(--transition-normal);
-            text-align: center;
+            padding: var(--spacing-lg);
+            border-radius: 8px;
             box-shadow: var(--shadow-light);
+            text-align: center;
+            transition: var(--transition-fast);
         }
 
         .service-card:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-medium);
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
         }
 
         .service-icon {
@@ -288,14 +271,14 @@
         }
 
         .service-card h3 {
-            font-family: var(--heading-font);
-            margin-bottom: var(--spacing-sm);
             color: var(--deep-navy);
+            margin-bottom: var(--spacing-sm);
         }
 
         /* About Section */
         .about {
             padding: var(--spacing-xl) 0;
+            background-color: var(--cream);
         }
 
         .about-container {
@@ -311,14 +294,13 @@
         }
 
         .about-content h2 {
-            font-family: var(--heading-font);
-            margin-bottom: var(--spacing-md);
             color: var(--deep-navy);
+            margin-bottom: var(--spacing-md);
         }
 
         .about-content p {
-            margin-bottom: var(--spacing-sm);
-            color: var(--dark-gray);
+            margin-bottom: var(--spacing-md);
+            color: var(--slate-gray);
         }
 
         .about-image {
@@ -328,14 +310,13 @@
 
         .about-image img {
             width: 100%;
-            border-radius: 5px;
+            border-radius: 8px;
             box-shadow: var(--shadow-light);
         }
 
         /* Testimonials */
         .testimonials {
             padding: var(--spacing-xl) 0;
-            background-color: white;
         }
 
         .testimonial-grid {
@@ -345,36 +326,34 @@
         }
 
         .testimonial-card {
-            background-color: var(--cream);
-            padding: var(--spacing-md);
-            border-left: 4px solid var(--forest-green);
+            background-color: white;
+            padding: var(--spacing-lg);
+            border-radius: 8px;
             box-shadow: var(--shadow-light);
+            position: relative;
+        }
+
+        .testimonial-card::before {
+            content: '"';
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 5rem;
+            color: var(--light-gray);
+            font-family: Georgia, serif;
+            line-height: 1;
+        }
+
+        .testimonial-content {
+            margin-top: var(--spacing-md);
+            position: relative;
+            z-index: 1;
         }
 
         .testimonial-content p {
             font-style: italic;
+            color: var(--slate-gray);
             margin-bottom: var(--spacing-md);
-            color: var(--dark-gray);
-            position: relative;
-        }
-
-        .testimonial-content p::before,
-        .testimonial-content p::after {
-            content: '"';
-            font-size: 3rem;
-            color: var(--forest-green);
-            opacity: 0.3;
-            position: absolute;
-        }
-
-        .testimonial-content p::before {
-            top: -20px;
-            left: -15px;
-        }
-
-        .testimonial-content p::after {
-            bottom: -40px;
-            right: -15px;
         }
 
         .testimonial-author {
@@ -384,21 +363,20 @@
         }
 
         .author-avatar img {
-            width: 60px;
-            height: 60px;
+            width: 50px;
+            height: 50px;
             border-radius: 50%;
             object-fit: cover;
-            border: 2px solid var(--forest-green);
         }
 
         .author-info h4 {
-            margin-bottom: 0.2rem;
             color: var(--deep-navy);
+            margin-bottom: 0.2rem;
         }
 
         .author-info p {
-            color: var(--slate-gray);
             font-size: 0.9rem;
+            color: var(--slate-gray);
         }
 
         /* Contact Section */
@@ -464,6 +442,7 @@
             background-color: white;
             font-family: var(--body-font);
             transition: var(--transition-fast);
+            border-radius: 4px;
         }
 
         .form-control:focus {
@@ -566,6 +545,10 @@
             .contact-container {
                 flex-direction: column;
             }
+            
+            nav ul {
+                gap: 1rem;
+            }
         }
 
         @media (max-width: 768px) {
@@ -606,6 +589,10 @@
             .service-card {
                 padding: var(--spacing-sm);
             }
+            
+            .logo img {
+                height: 40px;
+            }
         }
     </style>
 </head>
@@ -614,7 +601,7 @@
     <header>
         <div class="container header-container">
             <a href="#home" class="logo">
-                <i class="fas fa-hands-helping"></i>
+                <img src="components/images/Logo.png" alt="Helping Hand Moving Services Logo">
                 Helping Hand Moving Services
             </a>
             <nav>
@@ -669,7 +656,7 @@
                         <i class="fas fa-boxes"></i>
                     </div>
                     <h3>Packing & Storage</h3>
-                    <p>Professional packing services and secure storage solutions for your belongings during transitions.</p>
+                    <p>Professional packing services and storage solutions for all your moving needs.</p>
                 </div>
             </div>
         </div>
@@ -680,13 +667,13 @@
         <div class="container about-container">
             <div class="about-content">
                 <h2>Why Choose Helping Hand?</h2>
-                <p>At Helping Hand Moving Services, we believe that moving should be stress-free. With over 5 years of experience in the industry, our team understands the importance of trust and reliability.</p>
-                <p>We take pride in our attention to detail, our commitment to customer satisfaction, and our ability to handle any moving challenge with professionalism and care.</p>
-                <p>Our certified movers are trained to protect your belongings while ensuring your move runs smoothly from start to finish.</p>
-                <a href="#contact" class="btn btn-primary">Contact Us Today</a>
+                <p>With over 5 years of experience in the moving industry, we understand that your belongings are more than just objects - they're memories and life's treasures.</p>
+                <p>Our team of professional movers is dedicated to providing exceptional service with attention to detail. We've helped hundreds of families and businesses relocate safely and efficiently.</p>
+                <p>We offer competitive pricing, transparent communication, and a commitment to making your move as stress-free as possible.</p>
+                <a href="#contact" class="btn btn-primary">Get Free Quote</a>
             </div>
             <div class="about-image">
-                <img src="https://images.unsplash.com/photo-1600880292089-90a7e086ee0c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Moving team">
+                <img src="https://images.unsplash.com/photo-1586528130009-84347f0b1d1a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Professional movers helping with a move">
             </div>
         </div>
     </section>
@@ -695,49 +682,49 @@
     <section class="testimonials" id="testimonials">
         <div class="container">
             <div class="section-title">
-                <h2>Client Testimonials</h2>
-                <p>Hear what our customers have to say about our moving services.</p>
+                <h2>What Our Clients Say</h2>
+                <p>Hear from families and businesses who have trusted us with their moves</p>
             </div>
             <div class="testimonial-grid">
                 <div class="testimonial-card">
                     <div class="testimonial-content">
-                        <p>The team at Helping Hand made our move from California to New York seamless. They were professional, careful with our belongings, and incredibly helpful throughout the entire process.</p>
+                        <p>"Helping Hand made our move from California to Texas seamless. They were professional, careful, and affordable. Highly recommended!"</p>
                     </div>
                     <div class="testimonial-author">
                         <div class="author-avatar">
-                            <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="Sarah Johnson">
+                            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Sarah Johnson">
                         </div>
                         <div class="author-info">
                             <h4>Sarah Johnson</h4>
-                            <p>Residential Customer</p>
+                            <p>Homeowner</p>
                         </div>
                     </div>
                 </div>
                 <div class="testimonial-card">
                     <div class="testimonial-content">
-                        <p>We hired Helping Hand for our office relocation. They handled all the logistics perfectly, and our employees were impressed with their professionalism. Highly recommended!</p>
+                        <p>"As a small business owner, I needed reliable movers who could handle our office relocation. They exceeded our expectations!"</p>
                     </div>
                     <div class="testimonial-author">
                         <div class="author-avatar">
-                            <img src="https://randomuser.me/api/portraits/men/54.jpg" alt="Michael Chen">
+                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Michael Chen">
                         </div>
                         <div class="author-info">
                             <h4>Michael Chen</h4>
-                            <p>Commercial Customer</p>
+                            <p>Business Owner</p>
                         </div>
                     </div>
                 </div>
                 <div class="testimonial-card">
                     <div class="testimonial-content">
-                        <p>The packing service was exceptional. They carefully wrapped all our fragile items and organized everything efficiently. Our move was completed on time with no damage to any of our belongings.</p>
+                        <p>"The team was respectful, efficient, and handled all our fragile items with care. They made what could have been a stressful experience very easy."</p>
                     </div>
                     <div class="testimonial-author">
                         <div class="author-avatar">
-                            <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Jennifer Martinez">
+                            <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Emily Rodriguez">
                         </div>
                         <div class="author-info">
-                            <h4>Jennifer Martinez</h4>
-                            <p>Storage Customer</p>
+                            <h4>Emily Rodriguez</h4>
+                            <p>Homeowner</p>
                         </div>
                     </div>
                 </div>
@@ -750,7 +737,7 @@
         <div class="container">
             <div class="section-title">
                 <h2>Contact Us</h2>
-                <p>Get in touch for a free quote or to schedule your move.</p>
+                <p>Get a free quote for your move today</p>
             </div>
             <div class="contact-container">
                 <div class="contact-info">
@@ -789,8 +776,8 @@
                             </div>
                             <div>
                                 <h4>Working Hours</h4>
-                                <p>Monday - Friday: 8am - 6pm</p>
-                                <p>Saturday: 9am - 4pm</p>
+                                <p>Monday-Friday: 8am-6pm</p>
+                                <p>Saturday: 9am-4pm</p>
                             </div>
                         </div>
                     </div>
@@ -810,20 +797,24 @@
                             <input type="tel" id="phone" class="form-control" required>
                         </div>
                         <div class="form-group">
-                            <label for="service">Service Interested In</label>
-                            <select id="service" class="form-control" required>
+                            <label for="moveDate">Moving Date</label>
+                            <input type="date" id="moveDate" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="serviceType">Service Type</label>
+                            <select id="serviceType" class="form-control" required>
                                 <option value="">Select a service</option>
-                                <option value="residential">Residential Moving</option>
-                                <option value="commercial">Commercial Relocation</option>
-                                <option value="packing">Packing & Storage</option>
-                                <option value="other">Other</option>
+                                <option value="residential">Residential Move</option>
+                                <option value="commercial">Commercial Move</option>
+                                <option value="storage">Storage Services</option>
+                                <option value="packing">Packing Services</option>
                             </select>
                         </div>
                         <div class="form-group">
-                            <label for="message">Message</label>
-                            <textarea id="message" class="form-control" required></textarea>
+                            <label for="message">Additional Information</label>
+                            <textarea id="message" class="form-control" rows="4"></textarea>
                         </div>
-                        <button type="submit" class="btn btn-primary">Request Quote</button>
+                        <button type="submit" class="btn btn-primary">Get Free Quote</button>
                     </form>
                 </div>
             </div>
@@ -836,7 +827,7 @@
             <div class="footer-content">
                 <div class="footer-column">
                     <h3>Helping Hand Moving</h3>
-                    <p>Providing reliable and compassionate moving services since 2018. We understand that your belongings are precious, and we treat them with care.</p>
+                    <p>Your trusted partner for all moving needs. Professional, reliable, and affordable moving services for residential and commercial clients.</p>
                     <div class="social-links">
                         <a href="#"><i class="fab fa-facebook-f"></i></a>
                         <a href="#"><i class="fab fa-twitter"></i></a>
@@ -855,13 +846,13 @@
                     </ul>
                 </div>
                 <div class="footer-column">
-                    <h3>Our Services</h3>
+                    <h3>Services</h3>
                     <ul class="footer-links">
                         <li><a href="#">Residential Moving</a></li>
                         <li><a href="#">Commercial Relocation</a></li>
-                        <li><a href="#">Packing & Storage</a></li>
+                        <li><a href="#">Packing Services</a></li>
+                        <li><a href="#">Storage Solutions</a></li>
                         <li><a href="#">Local Moves</a></li>
-                        <li><a href="#">Long Distance Moves</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
@@ -882,31 +873,34 @@
     </footer>
 
     <script>
+        // Form submission handling
+        document.getElementById('quoteForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form values
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            
+            // Show success message
+            alert(`Thank you ${name}! We've received your request and will contact you at ${email} shortly.`);
+            
+            // Reset form
+            this.reset();
+        });
+        
         // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
+                
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    window.scrollTo({
+                        top: target.offsetTop - 70,
+                        behavior: 'smooth'
+                    });
+                }
             });
-        });
-
-        // Form submission handling
-        document.getElementById('quoteForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('Thank you for your request! We will contact you shortly.');
-            this.reset();
-        });
-
-        // Header scroll effect
-        window.addEventListener('scroll', function() {
-            const header = document.querySelector('header');
-            if (window.scrollY > 100) {
-                header.style.boxShadow = '0 4px 12px rgba(0, 0, 0, 0.1)';
-            } else {
-                header.style.boxShadow = 'var(--shadow-light)';
-            }
         });
     </script>
 </body>
