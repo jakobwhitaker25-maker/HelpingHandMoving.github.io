@@ -865,7 +865,7 @@
 
 <script>
 emailjs.init({
-    publicKey: "YOUR_PUBLIC_KEY"
+    publicKey: "Zw8oetdFMPY-nMIKq"
 });
 
 const form = document.getElementById("contactForm");
@@ -883,8 +883,8 @@ form.addEventListener("submit", function (e) {
     statusMessage.style.display = "none";
 
     emailjs.sendForm(
-        "YOUR_SERVICE_ID",
-        "YOUR_TEMPLATE_ID",
+        "service_nju8usq",
+        "template_toyat55",
         form
     )
     .then(function (response) {
@@ -913,62 +913,4 @@ form.addEventListener("submit", function (e) {
     });
 });
 </script>
-  <script>
-emailjs.init({
-    publicKey: "Zw8oetdFMPY-nMIKq"
-});
-
-const form = document.getElementById("contactForm");
-const statusMessage = document.getElementById("statusMessage");
-
-form.addEventListener("submit", function (e) {
-
-    e.preventDefault();
-
-    const submitButton = form.querySelector('button[type="submit"]');
-    const originalText = submitButton.textContent;
-
-    submitButton.textContent = "Sending...";
-    submitButton.disabled = true;
-
-    statusMessage.style.display = "none";
-
-    emailjs.sendForm(
-        "service_nju8usq",
-        "template_toyat55",
-        form
-    )
-
-    .then(function () {
-
-        statusMessage.textContent =
-            "Thank you! Your request has been sent successfully.";
-
-        statusMessage.className = "status-message success";
-        statusMessage.style.display = "block";
-
-        form.reset();
-
-    })
-
-    .catch(function (error) {
-
-        console.error(error);
-
-        statusMessage.textContent =
-            "Sorry, there was a problem sending your request.";
-
-        statusMessage.className = "status-message error";
-        statusMessage.style.display = "block";
-
-    })
-
-    .finally(function () {
-
-        submitButton.textContent = originalText;
-        submitButton.disabled = false;
-
-    });
-
-});
-</script>
+  
