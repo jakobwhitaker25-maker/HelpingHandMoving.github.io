@@ -3,9 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Page Not Found - Helping Hand Moving Services</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>Helping Hand Moving Services</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
+        :root {
+            --primary-color: #2c5e3a;
+            --secondary-color: #4a8c5d;
+            --accent-color: #ff9f1c;
+            --light-color: #f8f9fa;
+            --dark-color: #343a40;
+            --spacing-xs: 0.5rem;
+            --spacing-sm: 1rem;
+            --spacing-md: 1.5rem;
+            --spacing-lg: 2rem;
+            --spacing-xl: 3rem;
+            --transition-fast: 0.3s ease;
+            --border-radius: 8px;
+            --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
         * {
             margin: 0;
             padding: 0;
@@ -13,118 +29,911 @@
         }
 
         body {
-            font-family: 'Arial', sans-serif;
-            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-        }
-
-        .error-container {
-            text-align: center;
-            background: white;
-            padding: 60px 40px;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            max-width: 600px;
-            width: 100%;
-        }
-
-        .error-code {
-            font-size: 8rem;
-            font-weight: 800;
-            color: #ff6b6b;
-            margin-bottom: 20px;
-            text-shadow: 3px 3px 0 #f8f9fa;
-        }
-
-        .error-message {
-            font-size: 1.8rem;
-            color: #333;
-            margin-bottom: 20px;
-        }
-
-        .error-description {
-            color: #666;
-            font-size: 1.1rem;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
-            margin-bottom: 30px;
+            color: #333;
         }
 
-        .btn {
-            display: inline-block;
-            background-color: #4ecdc4;
-            color: white;
-            padding: 15px 30px;
-            border-radius: 30px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s;
-            border: none;
-            cursor: pointer;
-            font-size: 1rem;
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-sm);
         }
 
-        .btn:hover {
-            background-color: #45b7af;
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        /* Header Styles */
+        header {
+            background-color: white;
+            box-shadow: var(--box-shadow);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: var(--spacing-md) 0;
         }
 
         .logo {
             display: flex;
             align-items: center;
-            justify-content: center;
-            gap: 10px;
-            font-size: 2rem;
+            gap: var(--spacing-sm);
+            font-size: 1.5rem;
             font-weight: 700;
-            color: #4ecdc4;
-            margin-bottom: 30px;
+            color: var(--primary-color);
+            text-decoration: none;
         }
 
-        .logo i {
-            color: #ff6b6b;
+        .logo img {
+            height: 50px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--dark-color);
+            font-weight: 500;
+            transition: var(--transition-fast);
+        }
+
+        nav a:hover {
+            color: var(--primary-color);
+        }
+
+        .cta-button {
+            background-color: var(--accent-color);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: var(--border-radius);
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition-fast);
+            border: none;
+            cursor: pointer;
+        }
+
+        .cta-button:hover {
+            background-color: #e08c17;
+            transform: translateY(-3px);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(44, 94, 58, 0.8), rgba(44, 94, 58, 0.9)), url('https://images.unsplash.com/photo-1586528130009-84347f0b1d1a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 15rem 0 5rem;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: var(--spacing-md);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: var(--spacing-lg);
+            opacity: 0.9;
+        }
+
+        .hero-btns {
+            display: flex;
+            justify-content: center;
+            gap: var(--spacing-md);
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 1rem 2rem;
+            border-radius: var(--border-radius);
+            font-weight: 600;
+            text-decoration: none;
+            transition: var(--transition-fast);
+            border: none;
+            cursor: pointer;
+            display: inline-block;
+            text-align: center;
+        }
+
+        .btn-primary {
+            background-color: var(--accent-color);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: #e08c17;
+            transform: translateY(-3px);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+
+        .btn-secondary:hover {
+            background-color: white;
+            color: var(--primary-color);
+        }
+
+        /* Section Styles */
+        section {
+            padding: var(--spacing-xl) 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: var(--spacing-xl);
+        }
+
+        .section-title h2 {
+            font-family: var(--heading-font);
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: var(--spacing-md);
+        }
+
+        .section-title p {
+            color: #666;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Services Section */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--spacing-lg);
+        }
+
+        .service-card {
+            background-color: white;
+            padding: var(--spacing-lg);
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            text-align: center;
+            transition: var(--transition-fast);
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: var(--spacing-md);
+        }
+
+        .service-card h3 {
+            font-family: var(--heading-font);
+            margin-bottom: var(--spacing-sm);
+            color: var(--dark-color);
+        }
+
+        /* About Section */
+        .about-container {
+            display: flex;
+            gap: var(--spacing-xl);
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .about-content {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .about-content h2 {
+            font-family: var(--heading-font);
+            color: var(--primary-color);
+            margin-bottom: var(--spacing-md);
+        }
+
+        .about-content p {
+            margin-bottom: var(--spacing-md);
+        }
+
+        .about-image {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .about-image img {
+            width: 100%;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+        }
+
+        /* Testimonials */
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--spacing-lg);
+        }
+
+        .testimonial-card {
+            background-color: white;
+            padding: var(--spacing-lg);
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            position: relative;
+        }
+
+        .testimonial-card::before {
+            content: """;
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 5rem;
+            color: var(--accent-color);
+            opacity: 0.2;
+            font-family: Georgia, serif;
+        }
+
+        .testimonial-content {
+            margin-bottom: var(--spacing-md);
+            position: relative;
+            z-index: 1;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+        }
+
+        .author-avatar img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .author-info h4 {
+            color: var(--primary-color);
+            margin-bottom: 0.2rem;
+        }
+
+        .author-info p {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: var(--spacing-xl) 0;
+            background-color: var(--light-color);
+        }
+
+        .contact-container {
+            display: flex;
+            gap: var(--spacing-xl);
+            flex-wrap: wrap;
+        }
+
+        .contact-info {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .contact-info h3 {
+            font-family: var(--heading-font);
+            margin-bottom: var(--spacing-md);
+            color: var(--primary-color);
+        }
+
+        .contact-details {
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-md);
+        }
+
+        .contact-item {
+            display: flex;
+            gap: var(--spacing-sm);
+        }
+
+        .contact-icon {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            min-width: 40px;
+        }
+
+        .contact-form {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .form-group {
+            margin-bottom: var(--spacing-md);
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: var(--primary-color);
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            background-color: white;
+            font-family: inherit;
+            transition: var(--transition-fast);
+            border-radius: 4px;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary-color);
+        }
+
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        /* Status Messages */
+        .status-message {
+            padding: 1rem;
+            border-radius: 4px;
+            margin-top: var(--spacing-md);
+            display: none;
+        }
+
+        .success {
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+
+        .error {
+            background-color: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            padding: var(--spacing-xl) 0 var(--spacing-md);
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--spacing-lg);
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .footer-column h3 {
+            font-family: var(--heading-font);
+            margin-bottom: var(--spacing-md);
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background-color: var(--accent-color);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-links a {
+            color: #d1d5db;
+            text-decoration: none;
+            transition: var(--transition-fast);
+        }
+
+        .footer-links a:hover {
+            color: white;
+            padding-left: 5px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: var(--spacing-md);
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: white;
+            transition: var(--transition-fast);
+        }
+
+        .social-links a:hover {
+            background-color: var(--accent-color);
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: var(--spacing-md);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #9ca3af;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .about-container {
+                flex-direction: column;
+            }
+            
+            .contact-container {
+                flex-direction: column;
+            }
+            
+            nav ul {
+                gap: 1rem;
+            }
         }
 
         @media (max-width: 768px) {
-            .error-code {
-                font-size: 5rem;
+            .header-container {
+                flex-direction: column;
+                gap: 15px;
             }
             
-            .error-message {
-                font-size: 1.5rem;
+            nav ul {
+                gap: 1rem;
+                flex-wrap: wrap;
+                justify-content: center;
             }
             
-            .error-container {
-                padding: 40px 20px;
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero-btns {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .btn {
+                width: 100%;
+            }
+            
+            .service-card {
+                padding: var(--spacing-sm);
+            }
+            
+            .logo img {
+                height: 40px;
             }
         }
     </style>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
 <body>
-    <div class="error-container">
-        <div class="logo">
-            <i class="fas fa-hands-helping"></i>
-            <span>Helping Hand Moving Services</span>
+    <!-- Header Section -->
+    <header>
+        <div class="container header-container">
+            <a href="#home" class="logo">
+                <img src="components/images/logo_more_flowers.png" alt="Helping Hand Moving Services Logo">
+                Helping Hand Moving Services
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <a href="#contact" class="cta-button">Get Quote</a>
         </div>
-        
-        <div class="error-code">404</div>
-        <h1 class="error-message">Oops! Page Not Found</h1>
-        <p class="error-description">
-            We're sorry, but the page you're looking for doesn't exist or is currently under construction. 
-            Our team is working hard to get everything ready for you!
-        </p>
-        <a href="#" class="btn" onclick="window.history.back()">Go Back Home</a>
-    </div>
+    </header>
 
-    <script>
-        // Simple navigation
-        document.querySelector('.btn').addEventListener('click', function(e) {
-            e.preventDefault();
-            window.location.href = '#home';
-        });
-    </script>
-</body>
-</html>
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container hero-content">
+            <h1>Professional Moving Services with a Personal Touch</h1>
+            <p>Since 2018, Helping Hand Moving Services has been providing reliable, compassionate moving solutions for families and businesses. Our team of certified professionals handles every detail with care and attention.</p>
+            <div class="hero-btns">
+                <a href="#services" class="btn btn-primary">Our Services</a>
+                <a href="#contact" class="btn btn-secondary">Request Quote</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Moving Services</h2>
+                <p>We provide comprehensive moving solutions tailored to your specific needs.</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <h3>Residential Moving</h3>
+                    <p>From single rooms to entire homes, our team handles all aspects of residential relocation with care and precision.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <h3>Commercial Relocation</h3>
+                    <p>Specialized solutions for businesses of all sizes, ensuring minimal disruption to your operations.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-boxes"></i>
+                    </div>
+                    <h3>Packing & Storage</h3>
+                    <p>Professional packing services and storage solutions for all your moving needs.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container about-container">
+            <div class="about-content">
+                <h2>Why Choose Helping Hand?</h2>
+                <p>At Helping Hand, we believe moving should feel simple, organized, and stress-free. Whether you're moving across town or just need an extra set of hands, we're committed to treating your home and belongings with the same care and respect we'd give our own.</p>
+                <p>Our team of professional movers is dedicated to providing exceptional service with attention to detail. We've helped hundreds of families and businesses relocate safely and efficiently.</p>
+                <p>When you choose Helping Hand, you're choosing a team that's dedicated to earning your trust. We show up on time, work efficiently, and take pride in making every move as smooth as possible.</p>
+                <a href="#contact" class="btn btn-primary">Get a Free Quote</a>
+            </div>
+            <div class="about-image">
+                <img src="https://images.unsplash.com/photo-1586528130009-84347f0b1d1a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Moving team">
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials" id="testimonials">
+        <div class="container">
+            <div class="section-title">
+                <h2>What Our Clients Say</h2>
+                <p>Hear from families and businesses who have trusted us with their moves</p>
+            </div>
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>"Helping Hand made our cross-country move seamless. They were professional, efficient, and took great care of our belongings."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Sarah Johnson">
+                        </div>
+                        <div class="author-info">
+                            <h4>TEST</h4>
+                            <p>Family Move</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>"As a small business owner, I needed reliable movers. They were punctual, careful with our equipment, and offered excellent value."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Michael Chen">
+                        </div>
+                        <div class="author-info">
+                            <h4>TEST</h4>
+                            <p>Commercial Move</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>"I was nervous about my move, but the team at Helping Hand made it stress-free. They communicated every step of the way."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Jennifer Williams">
+                        </div>
+                        <div class="author-info">
+                            <h4>TEST</h4>
+                            <p>Relocation</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Contact Us</h2>
+                <p>Have questions? Get in touch with our team to discuss your moving needs</p>
+            </div>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Get In Touch</h3>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div>
+                                <h4>Service Area</h4>
+                                <p>--------------</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div>
+                                <h4>Phone Number</h4>
+                                <p>(512) 773-6386</p>
+                                <p>(830) 644-8006</p>
+                                <p>(512) 755-3796</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h4>Email Address</h4>
+                                <p>contact_us@helpinghandmoving.org</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div>
+                                <h4>Working Hours</h4>
+                                <p>Monday - Friday: 8am - 6pm</p>
+                                <p>Saturday: 9am - 4pm</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form id="contactForm">
+                        
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text"
+                                   id="name"
+                                   name="name"
+                                   class="form-control"
+                                   required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email"
+                                   id="email"
+                                   name="email"
+                                   class="form-control"
+                                   required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel"
+                                   id="phone"
+                                   name="phone"
+                                   class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="moveDate">Preferred Move Date</label>
+                            <input type="date"
+                                   id="moveDate"
+                                   name="moveDate"
+                                   class="form-control">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="service">Service Interested In</label>
+                            <select id="service"
+                                    name="serviceType"
+                                    class="form-control">
+                    
+                                <option value="">Select a service</option>
+                                <option>Residential Moving</option>
+                                <option>Commercial Relocation</option>
+                                <option>Packing & Storage</option>
+                                <option>Local Moves</option>
+                                <option>Long Distance</option>
+                                <option>Other</option>
+                    
+                            </select>
+                        </div>
+                    
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message"
+                                      name="message"
+                                      class="form-control"
+                                      required></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <div
+                                class="g-recaptcha"
+                                data-sitekey="6LfvFnQtAAAAANTgjSRlQsA6VQA02v4TG_EQgrzj">
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary">
+                            Send Message
+                        </button>
+
+                        <div id="statusMessage" class="status-message"></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Helping Hand Moving</h3>
+                    <p>Providing reliable, professional moving services since 2018. Your belongings are in safe hands.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#testimonials">Testimonials</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Services</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Residential Moving</a></li>
+                        <li><a href="#">Commercial Relocation</a></li>
+                        <li><a href="#">Packing Services</a></li>
+                        <li><a href="#">Storage Solutions</a></li>
+                        <li><a href="#">Local Moves</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Newsletter</h3>
+                    <p>Subscribe to our newsletter for moving tips and special offers.</p>
+                    <form>
+                        <div class="form-group">
+                            <input type="email" placeholder="Your Email Address" class="form-control" required>
+                        </div>
+                        <button type="submit" class="btn btn-secondary">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2026 Helping Hand Moving Services. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+<script>
+emailjs.init({
+    publicKey: "Zw8oetdFMPY-nMIKq"
+});
+
+const form = document.getElementById("contactForm");
+const statusMessage = document.getElementById("statusMessage");
+
+form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    const recaptchaResponse = grecaptcha.getResponse();
+
+    if (!recaptchaResponse) {
+        statusMessage.textContent =
+            "Please complete the reCAPTCHA verification.";
+
+        statusMessage.className = "status-message error";
+        statusMessage.style.display = "block";
+
+        return;
+}
+
+    const submitButton = form.querySelector('button[type="submit"]');
+    const originalText = submitButton.textContent;
+
+    submitButton.textContent = "Sending...";
+    submitButton.disabled = true;
+
+    statusMessage.style.display = "none";
+
+    emailjs.sendForm(
+        "service_qq54a9u",
+        "template_toyat55",
+        form
+    )
+    .then(function (response) {
+        console.log("Email sent successfully:", response);
+
+        statusMessage.textContent =
+            "Thank you! Your request has been sent successfully.";
+
+        statusMessage.className = "status-message success";
+        statusMessage.style.display = "block";
+
+        form.reset();
+
+        grecaptcha.reset();
+    })
+    .catch(function (error) {
+        console.error("EmailJS error:", error);
+
+        statusMessage.textContent =
+            "Sorry, there was a problem sending your request.";
+
+        statusMessage.className = "status-message error";
+        statusMessage.style.display = "block";
+    })
+    .finally(function () {
+        submitButton.textContent = originalText;
+        submitButton.disabled = false;
+        
+    });
+});
+</script>
+  
