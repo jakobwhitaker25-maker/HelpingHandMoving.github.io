@@ -493,6 +493,49 @@
             font-size: 0.9rem;
         }
 
+        .slideshow{
+            position:relative;
+            width:100%;
+            height:450px;
+            overflow:hidden;
+            border-radius:8px;
+            box-shadow:var(--box-shadow);
+        }
+
+        .slideshow img{
+            width:100%;
+            height:100%;
+            object-fit:cover;
+            display:block;
+        }
+
+        .slide-btn{
+            position:absolute;
+            top:50%;
+            transform:translateY(-50%);
+            background:rgba(0,0,0,.5);
+            color:white;
+            border:none;
+            width:45px;
+            height:45px;
+            cursor:pointer;
+            font-size:22px;
+            border-radius:50%;
+            transition:.3s;
+        }
+
+        .slide-btn:hover{
+            background:rgba(0,0,0,.75);
+        }
+
+        .prev{
+            left:10px;
+        }
+
+        .next{
+            right:10px;
+        }
+
         /* Responsive Design */
         @media (max-width: 992px) {
             .about-container {
@@ -552,6 +595,7 @@
             }
         }
     </style>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
 <body>
     <!-- Header Section -->
@@ -578,7 +622,7 @@
     <section class="hero" id="home">
         <div class="container hero-content">
             <h1>Professional Moving Services with a Personal Touch</h1>
-            <p>Since 2018, Helping Hand Moving Services has been providing reliable, compassionate moving solutions for families and businesses. Our team of certified professionals handles every detail with care and attention.</p>
+            <p>Helping Hand Moving Services is a locally owned moving company built by experienced professionals who know the industry inside and out. While our company is new, our team has spent years helping families and businesses move safely and efficiently. We're committed to honest service, careful handling, and making every move as smooth and stress-free as possible.</p>
             <div class="hero-btns">
                 <a href="#services" class="btn btn-primary">Our Services</a>
                 <a href="#contact" class="btn btn-secondary">Request Quote</a>
@@ -624,13 +668,26 @@
         <div class="container about-container">
             <div class="about-content">
                 <h2>Why Choose Helping Hand?</h2>
-                <p>With over 5 years of experience in the moving industry, we understand that your belongings are more than just objects - they're memories and life's treasures.</p>
+                <p>At Helping Hand, we believe moving should feel simple, organized, and stress-free. Whether you're moving across town or just need an extra set of hands, we're committed to treating your home and belongings with the same care and respect we'd give our own.</p>
                 <p>Our team of professional movers is dedicated to providing exceptional service with attention to detail. We've helped hundreds of families and businesses relocate safely and efficiently.</p>
-                <p>We offer competitive pricing, transparent communication, and a commitment to making your move stress-free.</p>
+                <p>When you choose Helping Hand, you're choosing a team that's dedicated to earning your trust. We show up on time, work efficiently, and take pride in making every move as smooth as possible.</p>
                 <a href="#contact" class="btn btn-primary">Get a Free Quote</a>
             </div>
             <div class="about-image">
-                <img src="https://images.unsplash.com/photo-1586528130009-84347f0b1d1a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Moving team">
+
+                <div class="slideshow">
+
+                    <button class="slide-btn prev">&#10094;</button>
+
+                    <img
+                        id="slideImage"
+                        src="components/images/dabois-photos/move1.jpg"
+                        alt="Helping Hand Moving">
+
+                    <button class="slide-btn next">&#10095;</button>
+
+                </div>
+
             </div>
         </div>
     </section>
@@ -705,8 +762,8 @@
                                 <i class="fas fa-map-marker-alt"></i>
                             </div>
                             <div>
-                                <h4>Our Location</h4>
-                                <p>123 Moving Street, City, State 12345</p>
+                                <h4>Service Area</h4>
+                                <p>--------------</p>
                             </div>
                         </div>
                         <div class="contact-item">
@@ -715,7 +772,9 @@
                             </div>
                             <div>
                                 <h4>Phone Number</h4>
-                                <p>(123) 456-7890</p>
+                                <p>(512) 773-6386</p>
+                                <p>(830) 644-8006</p>
+                                <p>(512) 755-3796</p>
                             </div>
                         </div>
                         <div class="contact-item">
@@ -724,7 +783,7 @@
                             </div>
                             <div>
                                 <h4>Email Address</h4>
-                                <p>info@helpinghandmoving.com</p>
+                                <p>contact_us@helpinghandmoving.org</p>
                             </div>
                         </div>
                         <div class="contact-item">
@@ -799,7 +858,13 @@
                                       class="form-control"
                                       required></textarea>
                         </div>
-                    
+
+                        <div class="form-group">
+                            <div
+                                class="g-recaptcha"
+                                data-sitekey="6LfvFnQtAAAAANTgjSRlQsA6VQA02v4TG_EQgrzj">
+                            </div>
+                        </div>
                         <button type="submit" class="btn btn-primary">
                             Send Message
                         </button>
@@ -857,13 +922,59 @@
                 </div>
             </div>
             <div class="copyright">
-                <p>&copy; 2023 Helping Hand Moving Services. All Rights Reserved.</p>
+                <p>&copy; 2026 Helping Hand Moving Services. All Rights Reserved.</p>
             </div>
         </div>
     </footer>
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 
 <script>
+// -------------------
+// Slideshow
+// -------------------
+
+const images = [
+    "components/images/dabois-photos/move1.jpg",
+    "components/images/dabois-photos/move2.jpg",
+    "components/images/dabois-photos/move3.jpg",
+    "components/images/dabois-photos/move4.jpg",
+    "components/images/dabois-photos/move5.jpg",
+    "components/images/dabois-photos/move6.jpg",
+    "components/images/dabois-photos/move7.jpg",
+    "components/images/dabois-photos/move8.jpg",
+    "components/images/dabois-photos/move9.jpg",
+    "components/images/dabois-photos/move10.jpg",
+    "components/images/dabois-photos/move11.jpg",
+    "components/images/dabois-photos/move12.jpg"
+];
+
+let current = 0;
+const slide = document.getElementById("slideImage");
+
+function showImage(index) {
+    slide.src = images[index];
+}
+
+document.querySelector(".next").addEventListener("click", () => {
+    current = (current + 1) % images.length;
+    showImage(current);
+});
+
+document.querySelector(".prev").addEventListener("click", () => {
+    current = (current - 1 + images.length) % images.length;
+    showImage(current);
+});
+
+setInterval(() => {
+    current = (current + 1) % images.length;
+    showImage(current);
+}, 5000);
+
+
+// -------------------
+// EmailJS
+// -------------------
+
 emailjs.init({
     publicKey: "Zw8oetdFMPY-nMIKq"
 });
@@ -873,6 +984,17 @@ const statusMessage = document.getElementById("statusMessage");
 
 form.addEventListener("submit", function (e) {
     e.preventDefault();
+    const recaptchaResponse = grecaptcha.getResponse();
+
+    if (!recaptchaResponse) {
+        statusMessage.textContent =
+            "Please complete the reCAPTCHA verification.";
+
+        statusMessage.className = "status-message error";
+        statusMessage.style.display = "block";
+
+        return;
+}
 
     const submitButton = form.querySelector('button[type="submit"]');
     const originalText = submitButton.textContent;
@@ -883,7 +1005,7 @@ form.addEventListener("submit", function (e) {
     statusMessage.style.display = "none";
 
     emailjs.sendForm(
-        "service_nju8usq",
+        "service_qq54a9u",
         "template_toyat55",
         form
     )
@@ -897,6 +1019,8 @@ form.addEventListener("submit", function (e) {
         statusMessage.style.display = "block";
 
         form.reset();
+
+        grecaptcha.reset();
     })
     .catch(function (error) {
         console.error("EmailJS error:", error);
@@ -910,6 +1034,7 @@ form.addEventListener("submit", function (e) {
     .finally(function () {
         submitButton.textContent = originalText;
         submitButton.disabled = false;
+        
     });
 });
 </script>
