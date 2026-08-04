@@ -929,6 +929,52 @@
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 
 <script>
+// -------------------
+// Slideshow
+// -------------------
+
+const images = [
+    "components/images/dabois-photos/move1.jpg",
+    "components/images/dabois-photos/move2.jpg",
+    "components/images/dabois-photos/move3.jpg",
+    "components/images/dabois-photos/move4.jpg",
+    "components/images/dabois-photos/move5.jpg",
+    "components/images/dabois-photos/move6.jpg",
+    "components/images/dabois-photos/move7.jpg",
+    "components/images/dabois-photos/move8.jpg",
+    "components/images/dabois-photos/move9.jpg",
+    "components/images/dabois-photos/move10.jpg",
+    "components/images/dabois-photos/move11.jpg",
+    "components/images/dabois-photos/move12.jpg"
+];
+
+let current = 0;
+const slide = document.getElementById("slideImage");
+
+function showImage(index) {
+    slide.src = images[index];
+}
+
+document.querySelector(".next").addEventListener("click", () => {
+    current = (current + 1) % images.length;
+    showImage(current);
+});
+
+document.querySelector(".prev").addEventListener("click", () => {
+    current = (current - 1 + images.length) % images.length;
+    showImage(current);
+});
+
+setInterval(() => {
+    current = (current + 1) % images.length;
+    showImage(current);
+}, 5000);
+
+
+// -------------------
+// EmailJS
+// -------------------
+
 emailjs.init({
     publicKey: "Zw8oetdFMPY-nMIKq"
 });
