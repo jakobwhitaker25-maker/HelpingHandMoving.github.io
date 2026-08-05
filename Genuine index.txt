@@ -4,6 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Helping Hand Moving Services</title>
+    <link rel="icon" type="image/png" sizes="32x32"
+      href="components/favicon_io/favicon-32x32.png">
+
+    <link rel="icon" type="image/png" sizes="16x16"
+        href="components/favicon_io/favicon-16x16.png">
+
+    <link rel="apple-touch-icon"
+        href="components/favicon_io/apple-touch-icon.png">
+        
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
@@ -783,7 +792,7 @@
                             </div>
                             <div>
                                 <h4>Email Address</h4>
-                                <p>contact_us@helpinghandmoving.org</p>
+                                <p>info@helpinghandmoving.org</p>
                             </div>
                         </div>
                         <div class="contact-item">
@@ -882,7 +891,7 @@
             <div class="footer-content">
                 <div class="footer-column">
                     <h3>Helping Hand Moving</h3>
-                    <p>Providing reliable, professional moving services since 2018. Your belongings are in safe hands.</p>
+                    <p>Providing reliable, professional moving services. Your belongings are in safe hands.</p>
                     <div class="social-links">
                         <a href="#"><i class="fab fa-facebook-f"></i></a>
                         <a href="#"><i class="fab fa-twitter"></i></a>
